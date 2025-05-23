@@ -13,6 +13,7 @@ $( "input[ name = 'file_input_grades' ]" ).change( function( ) {
     // データ整形関数へ
     if( grades_flag && student_flag ) {
         format( );
+        input_clear( );
     }
 });
 
@@ -23,10 +24,17 @@ $( "input[ name = 'file_input_student' ]" ).change( function( ) {
     // データ整形関数へ
     if( grades_flag && student_flag ) {
         format( );
+        input_clear( );
     }
 });
 
 /* ------------------------------------------------------------ */
+
+function input_clear( ) {
+    student_flag = grades_flag = false;
+    $( "input[ name = 'file_input_grades' ]" ).val( "" );
+    $( "input[ name = 'file_input_student' ]" ).val( "" );
+}
 
 /* ============================================================ */
 /* D&D対応関係 */
