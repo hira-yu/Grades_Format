@@ -66,7 +66,6 @@ async function format( ) {
     grades.shift( );
 
     for( i = 0; i < students.length; i++ ) students[ i ] = students[ i ].split( ',' );
-    console.log(students);
 
     for( i = 0; i < students.length; i++ ) {
         students[ i ][ 1 ] = students[ i ][ 1 ].split( "@" )[ 0 ].substring( 2 );
