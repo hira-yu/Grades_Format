@@ -66,9 +66,10 @@ async function format( ) {
     grades.shift( );
 
     for( i = 0; i < students.length; i++ ) students[ i ] = students[ i ].split( ',' );
+    console.log(students);
 
     for( i = 0; i < students.length; i++ ) {
-        students[ i ][ 5 ] = students[ i ][ 5 ].split( "@" )[ 0 ].substring( 2 );
+        students[ i ][ 1 ] = students[ i ][ 1 ].split( "@" )[ 0 ].substring( 2 );
         students[ i ].push( i );
     }
 
@@ -81,11 +82,11 @@ async function format( ) {
         }
     }
 
-    students.sort( function( a, b ){ return ( a[ 5 ] - b[ 5 ]);});
+    students.sort( function( a, b ){ return ( a[ 1 ] - b[ 1 ]);});
     grades.sort( function( a, b ){ return ( a[ 0 ] - b[ 0 ]);});
 
     for( i = 0; i < students.length; i++ ){
-        result.push([ String.fromCharCode( 111, 107 ) + students[ i ][ 5 ] + String.fromCharCode(64, 111, 107, 115, 46, 105, 112, 117, 116, 46, 97, 99, 46, 106, 112), grades[ i ][ 11 ] < 5 ? 0 : 1, students[ i ][ 6 ]]);
+        result.push([ String.fromCharCode( 111, 107 ) + students[ i ][ 1 ] + String.fromCharCode(64, 111, 107, 115, 46, 105, 112, 117, 116, 46, 97, 99, 46, 106, 112), grades[ i ][ 11 ] < 5 ? 0 : 1, students[ i ][ 2 ]]);
     }
 
     result.sort( function( a, b ){ return ( a[ 2 ] - b[ 2 ]);});
